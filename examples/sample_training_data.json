@@ -1,0 +1,84 @@
+{
+  "prompts": [
+    {
+      "prompt": "A serene mountain landscape at golden hour, snow-capped peaks reflecting in a crystal-clear alpine lake",
+      "negative_prompt": "blurry, low quality, distorted"
+    },
+    {
+      "prompt": "Portrait of an elderly woman with kind eyes, wrinkles telling stories of a life well-lived, soft natural lighting",
+      "negative_prompt": "cartoon, anime, fake"
+    },
+    {
+      "prompt": "Futuristic cyberpunk city at night, neon signs in Chinese and English, flying cars, rain-soaked streets",
+      "negative_prompt": "daytime, medieval, ancient"
+    },
+    {
+      "prompt": "Close-up macro photography of a dewdrop on a vibrant red rose petal, morning sunlight",
+      "negative_prompt": "blurry, overexposed, dark"
+    },
+    {
+      "prompt": "Ancient temple ruins overgrown with lush vegetation, rays of sunlight breaking through the canopy",
+      "negative_prompt": "modern, new, pristine"
+    },
+    {
+      "prompt": "Steaming bowl of ramen with perfectly cooked noodles, soft-boiled egg, and garnish, food photography",
+      "negative_prompt": "cold, unappetizing, burnt"
+    },
+    {
+      "prompt": "Astronaut floating in space with Earth visible in the background, realistic NASA photography style",
+      "negative_prompt": "cartoon, illustration, fake"
+    },
+    {
+      "prompt": "Cozy library interior with floor-to-ceiling bookshelves, leather armchair, warm ambient lighting",
+      "negative_prompt": "empty, harsh lighting, sterile"
+    },
+    {
+      "prompt": "Watercolor painting of cherry blossoms in full bloom, Japanese garden setting, soft pastel colors",
+      "negative_prompt": "photograph, realistic, 3D render"
+    },
+    {
+      "prompt": "Professional fashion model on runway, elegant designer dress, dramatic lighting, haute couture",
+      "negative_prompt": "casual, blurry, amateur"
+    },
+    {
+      "prompt": "Vintage car from the 1960s, chrome details gleaming, parked on a coastal highway at sunset",
+      "negative_prompt": "modern car, broken, rusty"
+    },
+    {
+      "prompt": "Abstract geometric pattern with vibrant colors, Mondrian style, clean lines and shapes",
+      "negative_prompt": "organic, curved, photorealistic"
+    },
+    {
+      "prompt": "Medieval castle on a hilltop surrounded by misty forest, dramatic storm clouds gathering",
+      "negative_prompt": "modern, futuristic, sunny"
+    },
+    {
+      "prompt": "Underwater coral reef teeming with colorful tropical fish, crystal clear water, marine photography",
+      "negative_prompt": "murky, lifeless, polluted"
+    },
+    {
+      "prompt": "Artisan craftsman working on pottery wheel, hands shaping clay, natural workshop lighting",
+      "negative_prompt": "factory, machine-made, artificial"
+    },
+    {
+      "prompt": "Desert sand dunes at twilight, deep shadows and golden highlights, minimal composition",
+      "negative_prompt": "ocean, forest, crowded"
+    },
+    {
+      "prompt": "Modern architectural masterpiece with glass and steel, innovative design, urban setting",
+      "negative_prompt": "old, traditional, damaged"
+    },
+    {
+      "prompt": "Wild horse running through meadow, mane flowing in wind, dynamic action shot, nature photography",
+      "negative_prompt": "domestic, stationary, caged"
+    },
+    {
+      "prompt": "Street food vendor in busy Asian night market, vibrant atmosphere, bokeh lights in background",
+      "negative_prompt": "empty, western, quiet"
+    },
+    {
+      "prompt": "Northern lights aurora borealis dancing across night sky above snowy mountain peaks, long exposure",
+      "negative_prompt": "daytime, cloudy, light pollution"
+    }
+  ]
+}

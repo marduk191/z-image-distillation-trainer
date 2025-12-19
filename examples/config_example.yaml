@@ -1,0 +1,141 @@
+# Z-Image Distillation Training Configuration
+# Advanced configuration file for reproducible training runs
+# Use with: python z_image_distillation_trainer.py --config config.yaml
+
+# Model Configuration
+teacher_model: "Tongyi-MAI/Z-Image-Base"
+student_model: null  # null = initialize from teacher
+
+# Data Configuration
+train_data_file: "training_data.json"
+max_train_prompts: null  # null = use all prompts
+resolution: 1024
+
+# Training Parameters
+num_epochs: 10
+train_batch_size: 4
+learning_rate: 1.0e-5
+lr_scheduler: "cosine"
+lr_warmup_steps: 500
+
+# Optimizer Configuration
+optimizer: "adamw"
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_epsilon: 1.0e-8
+weight_decay: 0.01
+max_grad_norm: 1.0
+
+# Distillation Configuration
+guidance_scale: 7.5  # CFG scale for teacher augmentation
+cfg_weight: 1.0      # Weight for CFG augmentation loss
+dm_weight: 0.5       # Weight for distribution matching loss
+use_lpips: false     # Use LPIPS perceptual loss
+
+# Student Model Configuration
+student_inference_steps: 8
+student_guidance_scale: 1.0
+
+# LoRA Configuration (if enabled)
+use_lora: false
+lora_rank: 64
+lora_alpha: 64
+
+# Performance & Memory Optimization
+use_bf16: true
+use_fp16: false
+gradient_checkpointing: true
+use_flash_attention: true
+num_workers: 4
+
+# Logging & Checkpointing
+output_dir: "./distillation_output"
+logging_steps: 10
+save_steps: 1000
+validation_steps: 500
+
+# Validation Configuration
+validation_prompts:
+  - "A serene landscape with mountains and a lake at sunset"
+  - "Portrait of a young woman with flowing hair, studio lighting"
+  - "Futuristic cityscape with neon lights and flying cars"
+  - "Ancient temple ruins overgrown with lush vegetation"
+  - "Professional food photography of a gourmet dish"
+
+# Miscellaneous
+seed: 42
+resume_from: null  # Path to checkpoint to resume from
+
+# ============================================================================
+# Preset Configurations
+# ============================================================================
+
+# Uncomment one of these presets and adjust as needed:
+
+# --- Full Fine-Tuning (High Quality, 48GB+ VRAM) ---
+# train_batch_size: 4
+# learning_rate: 1.0e-5
+# use_lora: false
+# gradient_checkpointing: true
+
+# --- LoRA Training (Memory Efficient, 16GB+ VRAM) ---
+# train_batch_size: 8
+# learning_rate: 5.0e-5
+# use_lora: true
+# lora_rank: 64
+# gradient_checkpointing: true
+
+# --- Quick Test (Fast iteration, lower quality) ---
+# train_batch_size: 8
+# num_epochs: 3
+# max_train_prompts: 100
+# use_lora: true
+# lora_rank: 32
+
+# --- Production (High quality, long training) ---
+# train_batch_size: 4
+# num_epochs: 20
+# learning_rate: 5.0e-6
+# use_lora: false
+# use_lpips: true
+# dm_weight: 1.0
+
+# ============================================================================
+# Advanced Tips
+# ============================================================================
+
+# 1. Balancing CFG and DM losses:
+#    - High cfg_weight (1.0-2.0): Faster convergence, may sacrifice quality
+#    - High dm_weight (0.5-1.0): Better quality, slower convergence
+#    - Equal weights (1.0, 1.0): Balanced approach
+
+# 2. LPIPS perceptual loss:
+#    - Enables: use_lpips: true
+#    - Requires: pip install lpips
+#    - Better quality but slower training (~20% overhead)
+
+# 3. LoRA for fine-tuning specific styles:
+#    - Use higher rank (128-256) for complex style transfers
+#    - Use lower rank (16-32) for subtle adjustments
+#    - lora_alpha typically equals lora_rank
+
+# 4. Learning rate tuning:
+#    - Full fine-tuning: 1e-5 to 5e-6
+#    - LoRA training: 5e-5 to 1e-4
+#    - Use lr_warmup_steps for stability
+
+# 5. Memory optimization:
+#    - Enable gradient_checkpointing (2x memory reduction)
+#    - Use LoRA (10x memory reduction)
+#    - Reduce batch size
+#    - Lower resolution (768 instead of 1024)
+
+# 6. Training duration:
+#    - Quick test: 3-5 epochs, 100-500 prompts
+#    - Standard: 10-15 epochs, 1000-5000 prompts
+#    - Production: 20-30 epochs, 10000+ prompts
+
+# 7. Validation:
+#    - Use diverse prompts (people, objects, scenes, text)
+#    - Include challenging cases (small text, complex scenes)
+#    - Monitor for artifacts or quality degradation

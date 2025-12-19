@@ -1,0 +1,37 @@
+# Z-Image Distillation Training Requirements
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+Pillow>=9.5.0
+
+# Diffusers (install from source for Z-Image support)
+# git+https://github.com/huggingface/diffusers.git
+
+# Model loading and saving
+safetensors>=0.4.0
+accelerate>=0.25.0
+transformers>=4.36.0
+
+# Training utilities
+tqdm>=4.66.0
+datasets>=2.14.0
+
+# LoRA training (optional but recommended)
+peft>=0.7.0
+
+# Perceptual loss (optional, for LPIPS)
+lpips>=0.1.4
+
+# Flash Attention (optional, for faster training on RTX 5090)
+# flash-attn>=2.5.0  # Install separately: pip install flash-attn --no-build-isolation
+
+# GUI dependencies
+Pillow>=9.5.0  # For image preview in GUI
+psutil>=5.9.0  # For system monitoring in GUI
+
+# Development tools
+black>=23.0.0
+isort>=5.12.0

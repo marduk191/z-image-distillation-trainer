@@ -1,6 +1,7 @@
 # ⚡️ Z-Image Distillation Trainer
 
-<img width="1448" height="1076" alt="image" src="https://github.com/user-attachments/assets/716805f9-062a-4767-ba69-79693bdb320a" />
+<img width="1263" height="1021" alt="image" src="https://github.com/user-attachments/assets/79cc81bf-6084-4106-afe5-331f9be0750c" />
+
 
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
